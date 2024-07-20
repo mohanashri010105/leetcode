@@ -1,0 +1,22 @@
+//to find the sign of the product of elements in the given array
+class Solution {
+    public int arraySign(int[] nums) {
+    //initializing an integer type variable to zero
+        int x=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==0)
+            return 0;
+            if(nums[i]<0)
+            x++;
+
+        }
+        //if the total number of negative elements is even ,then the result is positive
+        if(x%2==0){
+            return 1;
+        }
+        //if the total number of integers is odd,then the result is negative
+        else
+        return -1;
+    }
+    
+}
