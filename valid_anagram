@@ -1,0 +1,19 @@
+//anagrm refers to comparison of two or more elements with same values or characters
+class Solution {
+  // passing two strings that are to be verified as anagram or not as arguments
+    public boolean isAnagram(String s, String t) {
+      //considering the condition when both the strings don't have same length,they're not anagrams
+        if(s.length()!=t.length())
+        return false;
+      //converting strings into char array
+
+        char[] c1=s.toCharArray();
+        char[] c2=t.toCharArray();
+      //using sort() function from java collections
+
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+
+        return Arrays.equals(c1,c2);
+    }
+}
