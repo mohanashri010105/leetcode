@@ -1,0 +1,7 @@
+//one of the simplest leetcode problem
+//to convert the given string into lowerCase letters using toLowerCase() function
+class Solution {
+    public String toLowerCase(String s) {
+        return s.toLowerCase();
+    }
+}
