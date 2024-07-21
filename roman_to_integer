@@ -1,0 +1,31 @@
+//converting the given roman number into integer type 
+
+class Solution {
+  //passing the given roman string as argument
+    public int romanToInt(String s) {
+      //initializing three variables to zero
+        int ans=0,num=0,prev=0;
+      //assigning the value of roman number into integer num usng switch cases
+        for(int j=s.length()-1;j>=0;j--){
+            switch(s.charAt(j)){
+                case 'M'->num=1000;
+                case 'D'->num=500;
+                case 'C'->num=100;
+                case 'L'->num=50;
+                case 'X'->num=10;
+                case 'V'->num=5;
+                case 'I'->num=1;
+            }
+          //when the value in num is lesser than the previous value, then we subtract( iv = 5-1=4)
+            if(num<prev){
+                ans -=num;
+            }
+          //when the value of num is greater than previous one, then we add the value(vi=5+1=6) 
+            else{
+                ans+=num;
+            }
+            prev=num;
+        }
+        return ans;
+    }
+}
