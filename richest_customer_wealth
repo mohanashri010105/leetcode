@@ -1,0 +1,23 @@
+//we are going to return the customer who have more number of accounts assuming they're of highest wealth
+//highest wealth is found by adding the values of each customer's accounts of an array and returning the highest one
+
+class Solution {
+//initializing maximum value as the lowest acount holder value
+    int max=Integer.MIN_VALUE;
+    public int maximumWealth(int[][] accounts) {
+//initially the value of integer type sum is zero 
+//summing up of values of array of accounts of their array
+        for (int i=0;i<accounts.length;i++){
+            int sum=0;
+            for (int j=0;j<accounts[i].length;j++){
+                sum+=accounts[i][j];
+            }
+          //assigning the highest value in max and returning it
+            if (sum>max){
+                max=sum;
+            }
+
+        }
+        return max;
+    }
+}
