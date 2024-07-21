@@ -1,0 +1,30 @@
+//monotonic array refers to the kind of array whose value keeps increasing or decreasing or constant sometimes
+//displaying true if the array is monotonic in nature and false if not
+class Solution {
+    public boolean isMonotonic(int[] nums) {
+//if the length of the array is 1,i.e no more than one element is present in the array,then return true
+        if(nums.length==1) return true;
+//calling the function decres() and passing nums value as argument when the first value is greater than the last,i.e, the array is strictly decreasing in nature
+      if(nums[0]-nums[nums.length-1]>0) {
+          return decres(nums);
+      }
+//else the array must be strictly increasing,so calling the function increas() for verification
+      return incres(nums);
+        
+        
+    }
+//verifying whether the present value at i'th position is lesser than the next value,then return false 
+    public static boolean decres(int[] nums) {
+        for(int i = 0;i<nums.length-1;i++) {
+            if(nums[i]<nums[i+1]) return false;
+        }
+        return true;
+    }
+//verifying whether the present value at i'th position is greater than the next value,then return false
+    public static boolean incres(int[] nums) {
+        for(int i = 0;i<nums.length-1;i++) {
+            if(nums[i]>nums[i+1]) return false;
+        }
+        return true;
+    }
+}
