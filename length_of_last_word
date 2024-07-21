@@ -1,0 +1,12 @@
+//we are going to find the length of the last word of the given string
+//for instance if string="Hello leetcode", then the output will be 8(total length of the word "leetcode")
+
+class Solution {
+//passing the given string
+    public int lengthOfLastWord(String s) {
+        //splitting the given string based on white spaces
+        String[] o1=s.split(" ");
+        //returning the length of last word
+        return o1[o1.length-1].length();
+    }
+}
