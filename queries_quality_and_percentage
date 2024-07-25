@@ -1,0 +1,6 @@
+-- 1211. Queries Quality and Percentage
+--quality is identified as averge of dividing ratings by it's position , poor_query_percentage is calculated as percentage of queries with ratings<3 and both are rounded to 2 
+select query_name,round(avg(rating/position),2) as quality ,round(avg(if(rating<3,1,0))*100,2) as poor_query_percentage
+from Queries q 
+where q.query_name is not null
+group by q.query_name
