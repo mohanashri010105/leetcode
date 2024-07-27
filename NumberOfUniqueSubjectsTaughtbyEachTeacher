@@ -1,0 +1,5 @@
+--2356. Number of Unique Subjects Taught by Each Teacher
+--here we are going to return unique or distinct subject_id taught by each teacher 
+select teacher_id , count(distinct subject_id ) as cnt 
+from Teacher 
+group by teacher_id;
