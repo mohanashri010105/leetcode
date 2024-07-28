@@ -1,0 +1,23 @@
+//283. Move Zeroes
+class Solution {
+    public void moveZeroes(int[] nums) {
+//initializing the length of aray in a variable
+     int l=nums.length;
+//creating arrayDeque
+     Deque <Integer> d=new ArrayDeque<>();
+//if the number present in array is not equal to zero,then add the element in the front side of deque
+     for(int i=0;i<l;i++){
+        if(nums[i]!=0){
+            d.offer(nums[i]);
+        }
+//if the element is equal to zero,then add it from the last side of deque
+        else{
+            d.offerLast(nums[i]);
+        }
+     }   
+//printing the new arraydeque
+     for (int j : d){
+        System.out.print(j);
+     }
+    }
+}
