@@ -1,0 +1,51 @@
+//Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+//initially saving array length in a variable(optional)
+     int l=nums.length;
+     int c=0,k=0;
+//for the total length of the array, check whether the element is non-zero
+     for(int i=0;i<l;i++){
+        if(nums[i]!=0){
+            nums[c]=nums[i];
+            c++;
+        }
+        else{
+            k++;
+        }
+     }
+//adding zero elements at the end of the array
+     for(int j=l-1;k>0;k--,j--)
+     nums[j]=0;
+    
+    }
+}
+################################################################################################################################
+
+//another method(own solution)
+//we can use arrayDeque in which elements can be stored from both front and backsides
+//non - zero elements are added at the front side of array
+//zero value elements are added from the backside of the array
+class Solution {
+    public void moveZeroes(int[] nums) {
+     int l=nums.length;
+//initializig deque
+     Deque <Integer> d=new ArrayDeque<>();
+
+     for(int i=0;i<l;i++){
+//adding non-zero elements at the frontside
+        if(nums[i]!=0){
+            d.offer(nums[i]);
+        }
+//adding zero elements at the backside of the array
+        else{
+            d.offerLast(nums[i]);
+        }
+     }   
+//printing the newly created array
+     for (Integer j : d){
+        System.out.print(j);
+     }
+    }
+}
