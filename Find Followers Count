@@ -1,0 +1,6 @@
+1729. Find Followers Count
+--for each user, we return the number of followers.
+select user_id,(count(user_id)) as followers_count
+from Followers
+group by user_id
+order by user_id ASC
